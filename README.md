@@ -79,7 +79,9 @@
 ## 一致性检查
 
 每个skill内置一致性检查：
-- 人物一致性
-- 世界观一致性
-- 时间线连贯
-- 设定引用验证
+- 人物一致性（check-character）
+- 世界观一致性（check-setting）
+- 时间线连贯（check-timeline）
+- 情节逻辑（check-plot）
+- 违禁词合规（check-content）
+- 叙事风格（check-style）
