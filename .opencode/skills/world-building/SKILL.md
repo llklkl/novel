@@ -86,6 +86,7 @@ world_building:
 - 世界观规则要自洽，不能有矛盾
 - 提醒用户角色特征与主题的关联
 - 如需修改已完成的world_building，可将status改为"in_progress"后重新执行此skill
+- 如需回退world_building阶段，将status改为"in_progress"，重新执行此skill会覆盖现有数据
 
 ## 错误处理
 - **配置文件不存在**: 提示用户先运行novel-project skill创建项目
