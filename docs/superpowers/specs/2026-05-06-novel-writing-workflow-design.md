@@ -13,20 +13,36 @@
 ### 整体架构
 
 ```
-novel-workflow/
-├── skills/
-│   ├── 01-novel-ideation/          # 创意构思
-│   ├── 02-world-building/          # 世界观构建
-│   ├── 03-outline-design/          # 大纲设计
-│   ├── 04-chapter-writing/         # 章节撰写
-│   ├── 05-review-revision/         # 审阅修订
-│   └── 06-polish-style/            # 文本润色
-├── templates/
-│   └── novel-project.yaml          # 项目配置模板
-└── shared/
-    ├── consistency-checker.md      # 一致性检查规则
-    └── project-loader.md           # 项目加载工具
+.opencode/skills/
+├── novel-ideation/
+│   └── SKILL.md              # 创意构思
+├── world-building/
+│   └── SKILL.md              # 世界观构建
+├── outline-design/
+│   └── SKILL.md              # 大纲设计
+├── chapter-writing/
+│   └── SKILL.md              # 章节撰写
+├── review-revision/
+│   └── SKILL.md              # 审阅修订
+├── polish-style/
+│   └── SKILL.md              # 文本润色
+└── novel-project/
+    └── SKILL.md              # 项目管理（辅助）
+
+项目根目录/
+├── novel-project.yaml        # 项目配置文件
+├── chapters/                 # 章节文件
+│   ├── chapter-01.md
+│   ├── chapter-02.md
+│   └── ...
+└── assets/                   # 资源文件（可选）
 ```
+
+**Skill命名规范:**
+- 仅包含小写字母和数字，可用单个连字符分隔
+- 不以 `-` 开头或结尾，不包含连续的 `--`
+- 正则表达式: `^[a-z0-9]+(-[a-z0-9]+)*$`
+- 目录名称与 `SKILL.md` 中的 `name` 字段一致
 
 ### 设计原则
 
@@ -37,19 +53,20 @@ novel-workflow/
 
 ### Skill调用模式
 
-- 用户按需调用: `/skill 01-novel-ideation`
-- 项目管理工具负责初始化配置文件
+- 用户按需调用: `/skill novel-ideation`
+- 项目管理skill负责初始化配置文件
 - 每个skill自动读取当前项目状态
 
 ### Skill依赖关系
 
 **推荐执行顺序:**
-1. 初始化项目 → 01-novel-ideation
-2. 01-novel-ideation → 02-world-building
-3. 02-world-building → 03-outline-design
-4. 03-outline-design → 04-chapter-writing
-5. 04-chapter-writing → 05-review-revision
-6. 05-review-revision → 06-polish-style
+1. 初始化项目 → novel-project
+2. novel-project → novel-ideation
+3. novel-ideation → world-building
+4. world-building → outline-design
+5. outline-design → chapter-writing
+6. chapter-writing → review-revision
+7. review-revision → polish-style
 
 **前置条件检查:**
 - Skill 02-06在启动时会检查前置配置是否完成
@@ -122,7 +139,7 @@ consistency_rules:
 
 ## 各Skill详细设计
 
-### Skill 1: 创意构思 (01-novel-ideation)
+### Skill 1: 创意构思 (novel-ideation)
 
 **职责:** 帮助用户从模糊想法到清晰创意概念
 
@@ -139,7 +156,7 @@ consistency_rules:
 
 **输出:** 更新后的`ideation`配置部分
 
-### Skill 2: 世界观构建 (02-world-building)
+### Skill 2: 世界观构建 (world-building)
 
 **职责:** 构建小说的世界观、人物、设定
 
@@ -158,7 +175,7 @@ consistency_rules:
 
 **输出:** 更新后的`world_building`配置部分
 
-### Skill 3: 大纲设计 (03-outline-design)
+### Skill 3: 大纲设计 (outline-design)
 
 **职责:** 从世界观到章节级规划
 
@@ -177,7 +194,7 @@ consistency_rules:
 
 **输出:** 更新后的`outline`配置部分
 
-### Skill 4: 章节撰写 (04-chapter-writing)
+### Skill 4: 章节撰写 (chapter-writing)
 
 **职责:** 执行具体章节内容创作
 
@@ -201,7 +218,7 @@ consistency_rules:
 - 自动加载相关设定避免遗忘
 - 草稿与配置分离，章节文件独立管理
 
-### Skill 5: 审阅修订 (05-review-revision)
+### Skill 5: 审阅修订 (review-revision)
 
 **职责:** 检查一致性、逻辑、情节漏洞
 
@@ -225,7 +242,7 @@ consistency_rules:
 - 更新后的章节文件
 - 更新后的`chapters.reviewed`列表
 
-### Skill 6: 文本润色 (06-polish-style)
+### Skill 6: 文本润色 (polish-style)
 
 **职责:** 文字润色、风格统一
 
@@ -250,11 +267,9 @@ consistency_rules:
 
 ## 一致性检查机制
 
-### 共享模块设计
+### 实现方式
 
-**文件:** `shared/consistency-checker.md`
-
-**调用时机:** 每个skill执行时自动调用
+**内置于各skill中:** 每个skill在执行关键操作时自动调用一致性检查逻辑
 
 **检查流程:**
 1. 加载`novel-project.yaml`
@@ -275,21 +290,18 @@ consistency_rules:
 - 生成详细的问题报告，包含位置和建议修复方案
 - 用户选择: 忽略、修复、或修改设定
 
-## 项目管理工具
+## 项目管理Skill (novel-project)
 
 ### 项目初始化
-
-**文件:** `shared/project-loader.md`
 
 **功能:**
 - 创建新项目: 初始化`novel-project.yaml`
 - 加载现有项目: 读取配置并验证完整性
 - 项目状态查看: 显示各阶段完成状态
 
-**命令:**
-- `/novel init [project-name]` - 创建新项目
-- `/novel status` - 查看当前项目状态
-- `/novel load [project-path]` - 加载现有项目
+**使用方式:**
+- `/skill novel-project` 后选择操作类型
+- 支持创建、加载、查看状态三种模式
 
 ## 文件组织结构
 
@@ -332,19 +344,25 @@ my-novel/
 
 ### Skill元数据
 
-每个skill包含以下文件:
+每个skill的 `SKILL.md` 必须包含 YAML frontmatter:
 
-```
-XX-skill-name/
-├── SKILL.md           # skill主文件
-├── prompts/           # 提示词模板
-│   ├── ideation.md
-│   └── review.md
-└── templates/         # 输出模板
-    └── report.md
+```yaml
+---
+name: novel-ideation
+description: 协助完成小说创意构思，提炼核心理念、主题和关键词
+---
 ```
 
-### 配置读写
+**必填字段:**
+- `name`: 技能名称（符合命名规范）
+- `description`: 技能描述（1-1024字符）
+
+**可选字段:**
+- `license`: 许可证
+- `compatibility`: 兼容性声明
+- `metadata`: 自定义元数据映射
+
+### 配置文件读写
 
 - 使用YAML格式存储配置
 - skill读取时验证必需字段
@@ -362,45 +380,47 @@ XX-skill-name/
 
 ```bash
 # 1. 初始化项目
-/novel init "我的小说"
+/skill novel-project
+# 选择创建新项目，填写基本信息
 
 # 2. 创意构思
-/skill 01-novel-ideation
+/skill novel-ideation
 # AI协助提炼核心理念、主题、关键词
 
 # 3. 世界观构建
-/skill 02-world-building
+/skill world-building
 # AI协助定义世界设定、角色档案
 
 # 4. 大纲设计
-/skill 03-outline-design
+/skill outline-design
 # AI协助规划章节结构、情节点
 
 # 5. 章节撰写
-/skill 04-chapter-writing
+/skill chapter-writing
 # AI生成第一章草稿
 
 # 6. 审阅修订
-/skill 05-review-revision
+/skill review-revision
 # AI检查一致性、逻辑问题
 
 # 7. 文本润色
-/skill 06-polish-style
+/skill polish-style
 # AI优化文字风格
 
 # 8. 查看项目状态
-/novel status
+/skill novel-project
+# 选择查看项目状态
 ```
 
 ### 单独使用某个阶段
 
 ```bash
 # 只使用章节撰写
-/skill 04-chapter-writing
+/skill chapter-writing
 # 需要手动准备好 outline 和 world_building 配置
 
 # 只使用审阅功能
-/skill 05-review-revision
+/skill review-revision
 # 需要有已完成 draft 的章节
 ```
 
