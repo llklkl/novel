@@ -1,12 +1,15 @@
 ---
 name: novel-workflow
-description: 统筹小说写作全流程，引导用户逐步完成各阶段
+description: 小说写作全流程编排器，按顺序引导用户完成从项目创建到最终润色的7个阶段
 ---
 
 # 小说写作工作流Skill
 
 ## 职责
 统筹整个写作流程，引导用户按顺序完成各阶段，记录并更新进度。
+
+## 前置条件
+- 项目已通过novel-project skill初始化（或正在初始化）
 
 ## 工作流程
 
@@ -22,7 +25,7 @@ description: 统筹小说写作全流程，引导用户逐步完成各阶段
    - 完成标准: 用户确认继续
 
 3. **执行当前阶段**
-   - 调用对应阶段的skill
+   - 根据current_stage调用对应skill（如current_stage为novel-ideation则调用/skill novel-ideation）
    - 等待skill执行完成
    - 完成标准: 阶段skill执行完成
 
@@ -40,9 +43,18 @@ description: 统筹小说写作全流程，引导用户逐步完成各阶段
 ## 阶段顺序
 1. novel-project → 2. novel-ideation → 3. world-building → 4. outline-design → 5. chapter-writing → 6. review-revision → 7. polish-style
 
+## AI角色
+协调者模式 - 调度各阶段skill，跟踪进度，引导用户完成全流程
+
 ## 输出
 - 更新后的progress.yaml
 - 进度报告（文本格式）
+
+## 注意事项
+- 工作流skill按顺序引导用户完成各阶段，不可跳过
+- 每个阶段完成后自动更新progress.yaml
+- 如需返回某阶段重新执行，可手动修改progress.yaml中对应阶段状态为pending
+- 各阶段skill也可独立调用，但通过工作流skill调用可自动记录进度
 
 ## 错误处理
 - **项目不存在**: 引导用户创建新项目
