@@ -4,7 +4,7 @@
 
 ## 功能特点
 
-- **阶段式工作流**: 7个独立skills按创作流程协作
+- **阶段式工作流**: 7个创作skills + 6个检查skills按创作流程协作
 - **配置驱动**: 通过novel-project.yaml统一管理项目状态
 - **自动一致性**: 每个skill自动检查并维护一致性
 - **多项目支持**: 在novels/目录下管理多个小说项目
@@ -19,7 +19,13 @@
 │   ├── world-building/        # 世界观构建
 │   ├── outline-design/        # 大纲设计
 │   ├── chapter-writing/       # 章节撰写
-│   ├── review-revision/       # 审阅修订
+│   ├── review-revision/       # 审阅修订（主skill）
+│   ├── check-character/       # 角色一致性检查
+│   ├── check-setting/         # 世界观设定检查
+│   ├── check-timeline/        # 时间线连贯检查
+│   ├── check-plot/            # 情节逻辑检查
+│   ├── check-content/         # 违禁词合规检查
+│   ├── check-style/           # 叙事风格检查
 │   └── polish-style/          # 文本润色
 └── novels/                    # 小说项目目录
     └── example-novel/         # 示例项目
@@ -47,7 +53,13 @@
 | world-building | 世界观构建 | ideation完成 |
 | outline-design | 大纲设计 | world_building完成 |
 | chapter-writing | 章节撰写 | outline完成 |
-| review-revision | 审阅修订 | 存在drafted章节 |
+| review-revision | 审阅修订（主skill） | 存在drafted章节 |
+| check-character | 角色一致性检查 | 可独立调用 |
+| check-setting | 世界观设定检查 | 可独立调用 |
+| check-timeline | 时间线连贯检查 | 可独立调用 |
+| check-plot | 情节逻辑检查 | 可独立调用 |
+| check-content | 违禁词合规检查 | 可独立调用 |
+| check-style | 叙事风格检查 | 可独立调用 |
 | polish-style | 文本润色 | 存在reviewed章节 |
 
 ## 配置文件
