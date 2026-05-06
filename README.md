@@ -14,6 +14,7 @@
 ```
 .
 ├── .opencode/skills/          # 共享skills
+│   ├── novel-workflow/        # 写作工作流
 │   ├── novel-project/         # 项目管理
 │   ├── novel-ideation/        # 创意构思
 │   ├── world-building/        # 世界观构建
@@ -30,12 +31,14 @@
 └── novels/                    # 小说项目目录
     └── example-novel/         # 示例项目
         ├── novel-project.yaml
+        ├── progress.yaml
         ├── chapters/
         └── assets/
 ```
 
 ## 快速开始
 
+0. 使用工作流: `/skill novel-workflow` → 自动引导完成全流程
 1. 创建新项目: `/skill novel-project` → 选择"创建新项目"
 2. 创意构思: `/skill novel-ideation`
 3. 世界观构建: `/skill world-building`
@@ -48,6 +51,7 @@
 
 | Skill | 描述 | 前置条件 |
 |-------|------|----------|
+| novel-workflow | 写作工作流（统筹全流程） | 无 |
 | novel-project | 管理项目生命周期 | 无 |
 | novel-ideation | 创意构思 | 项目已初始化 |
 | world-building | 世界观构建 | ideation完成 |
