@@ -108,13 +108,21 @@ consistency_rules:
 ```yaml
 current_stage: novel-project
 stages:
-  novel-project: { status: in_progress }
-  novel-ideation: { status: pending }
-  world-building: { status: pending }
-  outline-design: { status: pending }
-  chapter-writing: { status: pending }
-  review-revision: { status: pending }
-  polish-style: { status: pending }
+  novel-project:
+    status: in_progress
+    started_at: ""
+  novel-ideation:
+    status: pending
+  world-building:
+    status: pending
+  outline-design:
+    status: pending
+  chapter-writing:
+    status: pending
+  review-revision:
+    status: pending
+  polish-style:
+    status: pending
 ```
 
 ## 文件组织结构
