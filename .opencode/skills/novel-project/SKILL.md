@@ -113,16 +113,22 @@ stages:
     started_at: ""
   novel-ideation:
     status: pending
+    started_at: ""
   world-building:
     status: pending
+    started_at: ""
   outline-design:
     status: pending
+    started_at: ""
   chapter-writing:
     status: pending
+    started_at: ""
   review-revision:
     status: pending
+    started_at: ""
   polish-style:
     status: pending
+    started_at: ""
 ```
 
 ## 文件组织结构
