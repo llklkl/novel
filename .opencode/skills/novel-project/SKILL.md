@@ -85,6 +85,10 @@ world_building:
   characters: []
   status: "pending"  # 可能值: pending, in_progress, completed
 
+character_building:
+  characters: []
+  status: "pending"  # 可能值: pending, in_progress, completed
+
 outline:
   structure: ""
   chapters: []
