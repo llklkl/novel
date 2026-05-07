@@ -1,0 +1,30 @@
+current_stage: polish-style
+stages:
+  novel-project:
+    status: completed
+    started_at: "2026-05-07T16:08:00"
+    completed_at: "2026-05-07T16:08:00"
+  novel-ideation:
+    status: completed
+    started_at: "2026-05-07T16:08:00"
+    completed_at: "2026-05-07T16:15:00"
+  world-building:
+    status: completed
+    started_at: "2026-05-07T16:15:00"
+    completed_at: "2026-05-07T16:25:00"
+  outline-design:
+    status: completed
+    started_at: "2026-05-07T16:25:00"
+    completed_at: "2026-05-07T16:35:00"
+  chapter-writing:
+    status: completed
+    started_at: "2026-05-07T16:35:00"
+    completed_at: "2026-05-07T17:30:00"
+  review-revision:
+    status: completed
+    started_at: "2026-05-07T17:30:00"
+    completed_at: "2026-05-07T17:45:00"
+  polish-style:
+    status: completed
+    started_at: "2026-05-07T17:45:00"
+    completed_at: "2026-05-07T18:00:00"
