@@ -115,27 +115,35 @@ stages:
   novel-project:
     status: in_progress
     started_at: ""
+    completed_at: ""
   novel-ideation:
     status: pending
     started_at: ""
+    completed_at: ""
   world-building:
     status: pending
     started_at: ""
+    completed_at: ""
   character-building:
     status: pending
     started_at: ""
+    completed_at: ""
   outline-design:
     status: pending
     started_at: ""
+    completed_at: ""
   chapter-writing:
     status: pending
     started_at: ""
+    completed_at: ""
   review-revision:
     status: pending
     started_at: ""
+    completed_at: ""
   polish-style:
     status: pending
     started_at: ""
+    completed_at: ""
 ```
 
 ## 文件组织结构
