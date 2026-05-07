@@ -117,6 +117,9 @@ stages:
   world-building:
     status: pending
     started_at: ""
+  character-building:
+    status: pending
+    started_at: ""
   outline-design:
     status: pending
     started_at: ""
