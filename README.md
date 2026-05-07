@@ -20,8 +20,8 @@
 │   ├── world-building/        # 世界观构建
 │   ├── character-building/    # 角色构建
 │   ├── outline-design/        # 大纲设计
+│   ├── chapter-cycle/         # 章节生命周期编排
 │   ├── chapter-writing/       # 章节撰写
-│   ├── review-revision/       # 审阅修订（主skill）
 │   ├── check-character/       # 角色一致性检查
 │   ├── check-setting/         # 世界观设定检查
 │   ├── check-timeline/        # 时间线连贯检查
@@ -45,9 +45,8 @@
 3. 世界观构建: `/skill world-building`
 4. 角色构建: `/skill character-building`
 5. 大纲设计: `/skill outline-design`
-6. 章节撰写: `/skill chapter-writing`
-7. 审阅修订: `/skill review-revision`
-8. 文本润色: `/skill polish-style`
+6. 章节撰写: `/skill chapter-cycle` → 自动完成撰写、审核、提交
+7. 文本润色: `/skill polish-style`
 
 ## Skills说明
 
@@ -59,8 +58,7 @@
 | world-building | 世界观构建 | ideation完成 |
 | character-building | 角色构建 | world_building完成 |
 | outline-design | 大纲设计 | world_building完成 |
-| chapter-writing | 章节撰写 | outline完成 |
-| review-revision | 审阅修订（主skill） | 存在drafted章节 |
+| chapter-cycle | 章节生命周期编排（撰写+审核+提交） | outline完成 |
 | check-character | 角色一致性检查 | 可独立调用 |
 | check-setting | 世界观设定检查 | 可独立调用 |
 | check-timeline | 时间线连贯检查 | 可独立调用 |
