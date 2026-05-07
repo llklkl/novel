@@ -22,15 +22,17 @@ description: 编排单章节的完整生命周期：撰写、审核、提交
 2. **执行章节撰写**
    - 调用chapter-writing skill
    - 等待章节初稿生成
-   - 完成标准: chapter-writing执行完成
+   - 更新章节状态为drafted
+   - 完成标准: chapter-writing执行完成，章节状态更新
 
 3. **执行章节审核**
    - 调用review-revision skill审核刚完成的章节
    - 等待审核完成
+   - 更新章节状态为reviewed
    - 完成标准: review-revision执行完成，章节状态为reviewed
 
 4. **提交到VCS**
-   - git add章节文件、novel-project.yaml、progress.yaml
+   - git add章节文件（chapters/chapter-XX.md格式）、novel-project.yaml、progress.yaml
    - git commit -m "feat: add chapter XX (drafted & reviewed)"
    - 完成标准: commit成功
 
@@ -54,6 +56,6 @@ description: 编排单章节的完整生命周期：撰写、审核、提交
 
 ## 错误处理
 - **无待撰写章节**: 提示用户所有章节已完成
-- **chapter-writing失败**: 提示用户手动完成或跳过
-- **review-revision失败**: 提示用户手动审核或跳过
-- **git commit失败**: 提示用户检查git状态
+- **chapter-writing失败**: 提供选项：重试、跳过该章节、或手动完成
+- **review-revision失败**: 提供选项：重新审核、跳过审核直接提交、或手动修改
+- **git commit失败**: 提示用户检查git状态，提供手动提交指导
