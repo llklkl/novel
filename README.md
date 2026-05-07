@@ -30,7 +30,7 @@
 │   ├── check-style/           # 叙事风格检查
 │   └── polish-style/          # 文本润色
 └── novels/                    # 小说项目目录
-    └── example-novel/         # 示例项目
+    └── <project-name>/        # 你的小说项目
         ├── novel-project.yaml
         ├── progress.yaml
         ├── chapters/
