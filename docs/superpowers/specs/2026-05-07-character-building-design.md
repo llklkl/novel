@@ -1,0 +1,139 @@
+# 角色构建Skill设计文档
+
+## 项目概述
+
+**目标:** 在世界观构建之后增加独立的角色构建阶段，创建character-building skill，深度开发小说角色体系。
+
+**核心设计:** 新增character-building skill作为第4阶段，包含角色档案、关系网络、角色弧线、对话风格四个模块。
+
+## 整体架构
+
+### 新增文件
+
+```
+.opencode/skills/
+└── character-building/        # 角色构建skill（新增）
+    └── SKILL.md
+```
+
+### 修改文件
+
+```
+.opencode/skills/
+├── novel-workflow/SKILL.md    # 阶段顺序增加character-building
+├── novel-project/SKILL.md     # progress.yaml模板增加character-building
+
+novels/example-novel/
+└── progress.yaml              # 增加character-building阶段
+
+README.md                      # 更新文档
+```
+
+### 新阶段顺序（8阶段）
+
+1. novel-project → 2. novel-ideation → 3. world-building → 4. **character-building** → 5. outline-design → 6. chapter-writing → 7. review-revision → 8. polish-style
+
+## character-building skill详细设计
+
+### SKILL.md结构
+
+```markdown
+---
+name: character-building
+description: 构建小说角色体系，包括角色档案、关系网络、角色弧线和对话风格
+---
+
+# 角色构建Skill
+
+## 职责
+深度开发小说角色，建立完整的角色体系。
+
+## 前置条件
+- 项目已通过novel-project skill初始化
+- world-building.status为"completed"
+
+## 工作流程
+
+1. **加载项目配置**
+   - 读取novel-project.yaml
+   - 确认world-building已完成
+   - 完成标准: 成功加载配置
+
+2. **创建角色档案**
+   - 对每个主要角色定义：
+     - 外貌特征
+     - 性格特征
+     - 背景故事
+     - 核心动机
+   - 完成标准: 主要角色档案完整
+
+3. **定义关系网络**
+   - 角色之间的关系
+   - 权力结构
+   - 情感纽带
+   - 完成标准: 关系网络清晰
+
+4. **设计角色弧线**
+   - 角色起始状态
+   - 关键转折点
+   - 最终成长状态
+   - 完成标准: 主要角色弧线完整
+
+5. **定义对话风格**
+   - 语言风格
+   - 口头禅/习惯用语
+   - 说话节奏
+   - 完成标准: 主要角色对话风格定义完成
+
+6. **一致性检查**
+   - 角色特征是否与世界观契合
+   - 角色之间是否有矛盾
+   - 完成标准: 无矛盾发现
+
+7. **更新配置**
+   - 将角色信息写入novel-project.yaml的characters部分
+   - 设置character-building.status为"completed"
+   - 完成标准: 配置文件成功更新
+
+## AI角色
+协作伙伴模式 - 建议角色设定、提醒矛盾、帮助设计角色弧线
+
+## 输出
+- 更新后的novel-project.yaml中characters部分
+- 角色关系图（文本格式）
+
+## 注意事项
+- 角色设定要具体，避免模糊描述
+- 角色弧线要与故事主题呼应
+- 对话风格要区分不同角色
+- 如需修改已完成的角色构建，可将status改为"in_progress"后重新执行
+
+## 错误处理
+- **配置文件不存在**: 提示用户先运行novel-project skill创建项目
+- **前置条件不满足**: 如果world-building.status不是completed，提示用户先完成世界观构建阶段
+- **角色设定冲突**: 发现角色特征矛盾时，提醒用户澄清
+```
+
+## 与现有系统的关系
+
+**新增：**
+- character-building skill
+- progress.yaml中增加character-building阶段
+
+**修改：**
+- novel-workflow阶段顺序从7阶段变为8阶段
+- novel-project的progress.yaml模板增加character-building
+- world-building不再包含角色设定（角色设定移至character-building）
+
+**保持不变：**
+- novel-project.yaml配置结构不变
+- 其他skill不变
+- 章节文件格式不变
+
+## 成功标准
+
+1. character-building skill实现，包含4个模块
+2. novel-workflow阶段顺序正确更新为8阶段
+3. progress.yaml模板包含character-building阶段
+4. README文档更新
+5. 错误处理完善
