@@ -18,6 +18,7 @@
 │   ├── novel-project/         # 项目管理
 │   ├── novel-ideation/        # 创意构思
 │   ├── world-building/        # 世界观构建
+│   ├── character-building/    # 角色构建
 │   ├── outline-design/        # 大纲设计
 │   ├── chapter-writing/       # 章节撰写
 │   ├── review-revision/       # 审阅修订（主skill）
@@ -42,10 +43,11 @@
 1. 创建新项目: `/skill novel-project` → 选择"创建新项目"
 2. 创意构思: `/skill novel-ideation`
 3. 世界观构建: `/skill world-building`
-4. 大纲设计: `/skill outline-design`
-5. 章节撰写: `/skill chapter-writing`
-6. 审阅修订: `/skill review-revision`
-7. 文本润色: `/skill polish-style`
+4. 角色构建: `/skill character-building`
+5. 大纲设计: `/skill outline-design`
+6. 章节撰写: `/skill chapter-writing`
+7. 审阅修订: `/skill review-revision`
+8. 文本润色: `/skill polish-style`
 
 ## Skills说明
 
@@ -55,6 +57,7 @@
 | novel-project | 管理项目生命周期 | 无 |
 | novel-ideation | 创意构思 | 项目已初始化 |
 | world-building | 世界观构建 | ideation完成 |
+| character-building | 角色构建 | world_building完成 |
 | outline-design | 大纲设计 | world_building完成 |
 | chapter-writing | 章节撰写 | outline完成 |
 | review-revision | 审阅修订（主skill） | 存在drafted章节 |
