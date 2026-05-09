@@ -139,7 +139,42 @@ digraph chapter_cycle {
  | 更改状态顺序 | 状态记录错误，进度跟踪混乱 | 强制状态顺序：planned→drafted→reviewed |
  | 因时间压力跳过审核 | 紧急不是跳过理由，质量下降 | 提供时间优化建议，明确拒绝跳过 |
 
- ## 错误处理
+ ## Quick Reference
+
+**核心流程（强制顺序）**：
+```
+planned → 撰写 → drafted → 审核 → reviewed → VCS提交
+```
+
+**工作流程（5步）**：
+1. 加载配置 - 读取novel-project.yaml，找planned章节
+2. 执行撰写 - 调用chapter-writing，更新状态为drafted
+3. 执行审核 - 调用review-revision，更新状态为reviewed ⚠️ 易遗漏
+4. 提交VCS - git add + git commit
+5. 循环或结束 - 继续下一章节或完成
+
+**章节状态流转**：
+- planned（待撰写）→ drafted（已撰写）→ reviewed（已审阅）→ polished（已润色）
+
+**禁止行为（3项）**：
+- ⚠️ 禁止跳过审核步骤（撰写后直接提交）
+- ⚠️ 禁止更改状态顺序（未审核设为reviewed）
+- ⚠️ 禁止省略任何步骤
+
+**常见借口与现实**：
+| 借口 | 现实 |
+|------|------|
+| "审核太慢" | 跳过审核=低质量提交 |
+| "用户说直接提交" | 流程强制，应解释必要性 |
+| "章节简单不需要审核" | 所有章节都需要审核 |
+| "时间紧急" | 紧急不是跳过理由 |
+
+**关键检查项**：
+- ⚠️ 撰写后是否立即执行审核（不跳过）
+- ⚠️ 是否正确更新状态（planned→drafted→reviewed）
+- ⚠️ git commit前是否确认review完成
+
+## 错误处理
 
 - **无待撰写章节**: 提示用户所有章节已完成
 - **chapter-writing失败**: 提供选项：重试、跳过该章节、或手动完成

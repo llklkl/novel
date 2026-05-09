@@ -194,6 +194,48 @@ digraph chapter_writing {
 - 章节文件使用两位数字格式（chapter-01, chapter-02）
 - 自检清单写入章节文件（便于后续review-revision阶段查看）
 
+## Quick Reference
+
+**工作流程（7步）**：
+1. 加载配置 - 读取novel-project.yaml
+2. 选择章节 - 列出planned章节，用户选择
+3. 加载设定 - outline + character + world-building ⚠️ 必须全部加载
+4. 场景分解（可选）- 情节点分解为场景
+5. 撰写内容 - 持续参考设定文件 ⚠️ 易遗漏
+6. 一致性自检 - 3项检查 ⚠️ 易遗漏
+7. 保存章节 - 同时更新配置文件 ⚠️ 易遗漏
+
+**必须加载的设定（3类）**：
+- outline.chapters[编号].purpose（章节目的）
+- outline.chapters[编号].plot_points（情节点列表）
+- character_profile.yaml（角色设定）
+- world_building.yaml（世界观规则）
+
+**一致性自检（3项，必须全部执行）**：
+1. 情节要点覆盖检查 - 所有plot_points是否出现 ⚠️
+2. 角色特质一致性检查 - 外貌/性格/行为是否一致 ⚠️
+3. 世界观规则遵守检查 - 是否违反规则 ⚠️
+
+**禁止行为（4项）**：
+- ⚠️ 禁止只读取部分设定
+- ⚠️ 禁止只在开始时读取设定（撰写过程中不参考）
+- ⚠️ 禁止跳过自检步骤
+- ⚠️ 禁止只保存章节文件（不更新配置）
+
+**常见错误与修正**：
+| 错误 | 修正 |
+|------|------|
+| 遗漏情节要点 | 逐项检查plot_points是否出现 |
+| 角色特质漂移 | 撰写时查看character_profile.yaml |
+| 世界观规则违反 | 撰写场景时查看world_building.yaml |
+| 只保存文件不更新配置 | 同时更新novel-project.yaml |
+
+**关键检查项**：
+- ⚠️ 是否加载所有设定文件
+- ⚠️ 撰写过程中是否持续参考设定
+- ⚠️ 3项自检是否全部执行
+- ⚠️ 是否同时更新配置文件
+
 ## 错误处理
 - **配置文件不存在**: 提示用户先运行novel-project skill创建项目
 - **前置条件不满足**: 如果outline.status不是completed，提示用户先完成大纲设计阶段
