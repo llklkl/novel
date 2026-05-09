@@ -1,6 +1,6 @@
 ---
 name: novel-workflow
-description: 使用当需要按顺序引导用户完成小说写作全流程时，从项目创建到最终润色共8个阶段
+description: 当需要按顺序引导用户完成小说写作全流程时使用
 ---
 
 # 小说写作工作流Skill
