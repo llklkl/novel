@@ -64,7 +64,7 @@ digraph novel_ideation {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取 novel-project.yaml，检查 ideation 状态
+- 读取 novel-project.json，检查 ideation 状态
 
 ### 2. 系统化探索（7个维度）
 详见 reference/exploration-dimensions.md

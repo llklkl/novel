@@ -52,7 +52,7 @@ digraph chapter_writing {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取novel-project.yaml
+- 读取novel-project.json
 - 确认outline.status为"completed"
 - 读取chapters部分状态
 - 完成标准: 成功读取配置并确认前置条件满足
@@ -66,8 +66,8 @@ digraph chapter_writing {
 - **必须读取以下文件**（防止遗漏）：
   - outline.chapters[章节编号].purpose（章节目的）
   - outline.chapters[章节编号].plot_points（情节点列表）
-  - character_profile.yaml（角色设定）
-  - world_building.yaml（世界观规则）
+  - character_profile.json（角色设定）
+  - world_building.json（世界观规则）
 - **禁止**: 只读取部分设定
 - **完成标准**: 所有设定文件成功加载
 
@@ -80,8 +80,8 @@ digraph chapter_writing {
 ### 5. 撰写内容（持续参考设定）
 - **关键**: 撰写过程中必须反复查看设定文件
 - **具体做法**：
-  - 撰写某个角色时，查看character_profile.yaml中该角色的详细设定
-  - 撰写世界观场景时，查看world_building.yaml中相关规则
+  - 撰写某个角色时，查看character_profile.json中该角色的详细设定
+  - 撰写世界观场景时，查看world_building.json中相关规则
   - 完成一个情节要点后，检查是否覆盖了下一个情节要点
 - **禁止**: 只在开始时读取一次设定，撰写过程中不参考
 - **完成标准**: 章节初稿完成
@@ -142,7 +142,7 @@ digraph chapter_writing {
 1. **禁止只读取部分设定** - 必须读取所有角色和世界观设定
 2. **禁止撰写过程中不参考设定** - 必须在撰写每个角色/场景时参考设定文件
 3. **禁止跳过自检步骤** - 必须执行3个自检（情节、角色、世界观）
-4. **禁止只保存章节文件** - 必须同时更新novel-project.yaml配置
+4. **禁止只保存章节文件** - 必须同时更新novel-project.json配置
 
 **所有禁止行为意味着：撰写不够系统化，会导致质量问题。**
 
@@ -152,14 +152,14 @@ digraph chapter_writing {
 |------|------|------|
 | 只读取设定一次 | 撰写过程中遗忘细节 | 持续参考设定文件（每写一个角色时查看其设定） |
 | 遗漏情节要点 | plot_points未完全覆盖 | 完成后逐项检查是否所有plot_points出现 |
-| 角色特质漂移 | "黑色眼睛"写成"深色眼睛" | 撰写角色时立即查看character_profile.yaml |
-| 遗漏世界观规则 | 无魔法设定中出现魔法 | 撰写世界观场景时查看world_building.yaml |
-| 只保存文件 | 配置文件未更新 | 保存章节同时更新novel-project.yaml |
+| 角色特质漂移 | "黑色眼睛"写成"深色眼睛" | 撰写角色时立即查看character_profile.json |
+| 遗漏世界观规则 | 无魔法设定中出现魔法 | 撰写世界观场景时查看world_building.json |
+| 只保存文件 | 配置文件未更新 | 保存章节同时更新novel-project.json |
 
 ## Quick Reference
 
 **工作流程（7步）**：
-1. 加载配置 - 读取novel-project.yaml
+1. 加载配置 - 读取novel-project.json
 2. 选择章节 - 列出planned章节，用户选择
 3. 加载设定 - outline + character + world-building ⚠️ 必须全部加载
 4. 场景分解（可选）- 情节点分解为场景
@@ -170,8 +170,8 @@ digraph chapter_writing {
 **必须加载的设定（3类）**：
 - outline.chapters[编号].purpose（章节目的）
 - outline.chapters[编号].plot_points（情节点列表）
-- character_profile.yaml（角色设定）
-- world_building.yaml（世界观规则）
+- character_profile.json（角色设定）
+- world_building.json（世界观规则）
 
 **一致性自检（3项，必须全部执行）**：
 1. 情节要点覆盖检查 - 所有plot_points是否出现 ⚠️
@@ -188,9 +188,9 @@ digraph chapter_writing {
 | 错误 | 修正 |
 |------|------|
 | 遗漏情节要点 | 逐项检查plot_points是否出现 |
-| 角色特质漂移 | 撰写时查看character_profile.yaml |
-| 世界观规则违反 | 撰写场景时查看world_building.yaml |
-| 只保存文件不更新配置 | 同时更新novel-project.yaml |
+| 角色特质漂移 | 撰写时查看character_profile.json |
+| 世界观规则违反 | 撰写场景时查看world_building.json |
+| 只保存文件不更新配置 | 同时更新novel-project.json |
 
 **关键检查项**：
 - ⚠️ 是否加载所有设定文件

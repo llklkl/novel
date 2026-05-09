@@ -60,7 +60,7 @@ digraph novel_project {
     "列出项目" -> "用户选择";
     "用户选择" -> "加载配置";
     
-    "查看状态" -> "读取novel-project.yaml";
+    "查看状态" -> "读取novel-project.json";
     "列出所有" -> "扫描novels/";
 }
 ```
@@ -96,7 +96,7 @@ digraph novel_project {
 
 ### 3. 查看当前项目状态
 
-- 读取 novel-project.yaml
+- 读取 novel-project.json
 - 显示各阶段完成状态（ideation/world_building/character_building/outline/chapters）
 - 显示章节统计信息
 
@@ -133,8 +133,8 @@ digraph novel_project {
 **创建流程（5步）**：
 1. 询问基本信息（名称、类型、目标字数）
 2. 使用标准目录结构
-3. 初始化配置文件（novel-project.yaml）
-4. 初始化进度文件（progress.yaml）⚠️ 易遗漏
+3. 初始化配置文件（novel-project.json）
+4. 初始化进度文件（progress.json）⚠️ 易遗漏
 5. 自动切换到新项目 ⚠️ 易遗漏
 
 **禁止行为（5项）**：

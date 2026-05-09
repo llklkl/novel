@@ -70,7 +70,7 @@ digraph check_content {
 ## 工作流程
 
 ### 1. 加载合规规则
-- 读取 novel-project.yaml 中的 consistency_rules 部分（违禁词列表）
+- 读取 novel-project.json 中的 consistency_rules 部分（违禁词列表）
 - 加载默认合规规则（敏感内容、平台规范）
 - **完成标准**: 成功加载合规规则
 

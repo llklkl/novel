@@ -60,7 +60,7 @@ digraph check_timeline {
 ## 工作流程
 
 ### 1. 加载时间线信息
-- 读取 novel-project.yaml 中的 outline.chapters 部分
+- 读取 novel-project.json 中的 outline.chapters 部分
 - 读取 world-building 部分的角色年龄信息
 
 ### 2. 加载章节内容

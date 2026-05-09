@@ -66,7 +66,7 @@ digraph outline_design {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取 novel-project.yaml，确认角色构建已完成
+- 读取 novel-project.json，确认角色构建已完成
 
 ### 2. 选择结构类型
 详见 reference/structure-guidance.md

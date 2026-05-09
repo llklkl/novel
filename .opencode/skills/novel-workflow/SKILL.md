@@ -77,8 +77,8 @@ digraph novel_workflow {
 ## 工作流程
 
 ### 1. 加载项目
-- 读取novel-project.yaml
-- 读取progress.yaml（如无则初始化）
+- 读取novel-project.json
+- 读取progress.json（如无则初始化）
 - 完成标准: 成功加载项目和进度
 
 ### 2. 显示进度
@@ -97,7 +97,7 @@ digraph novel_workflow {
 - 标记当前阶段为completed
 - 标记下一阶段为in_progress
 - 记录时间戳
-- 完成标准: progress.yaml更新成功
+- 完成标准: progress.json更新成功
 
 ### 5. 循环或结束
 - 如所有阶段完成，显示完成消息
@@ -166,7 +166,7 @@ digraph novel_workflow {
 7. polish-style - 文本润色
 
 **工作流程（5步）**：
-1. 加载项目 - 读取novel-project.yaml和progress.yaml
+1. 加载项目 - 读取novel-project.json和progress.json
 2. 显示进度 - 展示各阶段状态，推荐下一步
 3. 执行当前阶段 - 调用对应skill
 4. 更新进度 - 标记completed，启动下一阶段
@@ -189,7 +189,7 @@ digraph novel_workflow {
 **关键检查项**：
 - ⚠️ 是否按顺序执行阶段
 - ⚠️ 是否拒绝用户跳过请求
-- ⚠️ progress.yaml是否正确更新
+- ⚠️ progress.json是否正确更新
 
 ## 错误处理
 - **项目不存在**: 引导用户创建新项目

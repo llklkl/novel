@@ -81,7 +81,7 @@ digraph chapter_cycle {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取novel-project.yaml
+- 读取novel-project.json
 - 读取outline.chapters，找到下一个`planned`状态的章节
 - 完成标准: 成功加载配置并确定待撰写章节
 
@@ -101,7 +101,7 @@ digraph chapter_cycle {
 - 完成标准: review-revision执行完成，章节状态为`reviewed`
 
 ### 4. 提交到VCS
-- git add章节文件（chapters/chapter-XX.md格式）、novel-project.yaml、progress.yaml
+- git add章节文件（chapters/chapter-XX.md格式）、novel-project.json、progress.json
 - git commit -m "feat: add chapter XX (drafted & reviewed)"
 - 完成标准: commit成功
 
@@ -147,7 +147,7 @@ planned → 撰写 → drafted → 审核 → reviewed → VCS提交
 ```
 
 **工作流程（5步）**：
-1. 加载配置 - 读取novel-project.yaml，找planned章节
+1. 加载配置 - 读取novel-project.json，找planned章节
 2. 执行撰写 - 调用chapter-writing，更新状态为drafted
 3. 执行审核 - 调用review-revision，更新状态为reviewed ⚠️ 易遗漏
 4. 提交VCS - git add + git commit
@@ -187,4 +187,4 @@ planned → 撰写 → drafted → 审核 → reviewed → VCS提交
 ## 输出
 - 更新后的章节文件（reviewed状态）
 - git commit记录
-- 更新后的novel-project.yaml和progress.yaml
+- 更新后的novel-project.json和progress.json

@@ -64,7 +64,7 @@ digraph character_building {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取 novel-project.yaml，确认 world-building 已完成
+- 读取 novel-project.json，确认 world-building 已完成
 
 ### 2. 构建角色档案
 详见 reference/character-templates.md

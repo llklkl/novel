@@ -60,7 +60,7 @@ digraph check_character {
 ## 工作流程
 
 ### 1. 加载角色档案
-- 读取 novel-project.yaml 中的 character-building 部分
+- 读取 novel-project.json 中的 character-building 部分
 - 特别关注：personality, dialogue_style, motivation, relationships, role_in_story
 
 ### 2. 加载章节内容

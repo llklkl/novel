@@ -65,7 +65,7 @@ digraph review_revision {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取novel-project.yaml
+- 读取novel-project.json
 - 确认存在drafted状态的章节
 - 完成标准: 成功读取配置
 
@@ -134,7 +134,7 @@ digraph review_revision {
 ```
 
 **工作流程（6步）**：
-1. 加载配置 - 读取novel-project.yaml
+1. 加载配置 - 读取novel-project.json
 2. 选择章节 - 列出drafted章节，用户选择
 3. 调度检查 - 顺序执行6个检查 ⚠️ 不可跳过
 4. 生成报告 - 汇总问题，按严重程度排序

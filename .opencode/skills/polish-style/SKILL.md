@@ -45,7 +45,7 @@ digraph polish_style {
 ## 工作流程
 
 ### 1. 加载项目配置
-- 读取novel-project.yaml，确认存在reviewed状态的章节
+- 读取novel-project.json，确认存在reviewed状态的章节
 
 ### 2. 选择要润色的章节
 - 列出所有reviewed状态的章节，用户选择

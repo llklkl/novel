@@ -201,7 +201,7 @@
 ✅ **Recognition**: YES → 启动 check-setting skill
 
 #### Step 2: 加载世界观设定
-- novel-project.yaml 中的 world_building 部分
+- novel-project.json 中的 world_building 部分
 - 提取: time_period, location, rules, society, tech_level, magic_system
 
 #### Step 3: 加载章节内容
