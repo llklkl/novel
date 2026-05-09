@@ -1,0 +1,45 @@
+{
+  "current_stage": "polish-style",
+  "stages": {
+    "novel-project": {
+      "status": "completed",
+      "started_at": "2026-05-08T14:35:00",
+      "completed_at": "2026-05-08T14:36:00"
+    },
+    "novel-ideation": {
+      "status": "completed",
+      "started_at": "2026-05-08T14:36:00",
+      "completed_at": "2026-05-08T14:45:00"
+    },
+    "world-building": {
+      "status": "completed",
+      "started_at": "2026-05-08T14:45:00",
+      "completed_at": "2026-05-08T15:00:00"
+    },
+    "character-building": {
+      "status": "pending",
+      "started_at": "",
+      "completed_at": ""
+    },
+    "outline-design": {
+      "status": "pending",
+      "started_at": "",
+      "completed_at": ""
+    },
+    "chapter-writing": {
+      "status": "pending",
+      "started_at": "",
+      "completed_at": ""
+    },
+    "review-revision": {
+      "status": "pending",
+      "started_at": "",
+      "completed_at": ""
+    },
+    "polish-style": {
+      "status": "pending",
+      "started_at": "",
+      "completed_at": ""
+    }
+  }
+}
