@@ -1,6 +1,6 @@
 ---
 name: check-character
-description: 检查小说章节中角色设定的一致性
+description: 当需要检查章节中人物外貌、性格、关系、称呼是否与设定一致，或已死亡角色错误出现时使用
 ---
 
 # 角色一致性检查Skill

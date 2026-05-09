@@ -1,6 +1,6 @@
 ---
 name: novel-ideation
-description: 协助完成小说创意构思，提炼核心理念、主题和关键词
+description: 当项目初始化完成后需要提炼小说核心理念、主题和关键词时使用
 ---
 
 # 创意构思Skill

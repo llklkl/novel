@@ -1,6 +1,6 @@
 ---
 name: novel-project
-description: 管理小说项目生命周期，包括创建、切换、加载项目和查看状态
+description: 当需要创建、切换、加载小说项目或查看项目状态时使用
 ---
 
 # 项目管理Skill

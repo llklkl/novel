@@ -1,6 +1,6 @@
 ---
 name: outline-design
-description: 设计小说大纲，规划章节结构和情节点
+description: 当角色构建完成后需要规划小说整体结构、章节划分和情节点时使用
 ---
 
 # 大纲设计Skill

@@ -1,6 +1,6 @@
 ---
 name: check-timeline
-description: 检查小说章节中时间线的连贯性
+description: 当需要检查章节事件顺序、时间跨度合理性、人物年龄一致性或章节时间衔接时使用
 ---
 
 # 时间线连贯检查Skill

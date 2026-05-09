@@ -1,6 +1,6 @@
 ---
 name: check-style
-description: 检查小说章节叙事风格的一致性
+description: 当需要检查章节叙事视角、文风语气、对话风格、重复表达或段落节奏问题时使用
 ---
 
 # 叙事风格检查Skill

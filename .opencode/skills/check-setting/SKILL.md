@@ -1,6 +1,6 @@
 ---
 name: check-setting
-description: 检查小说章节中世界观设定的一致性
+description: 当需要检查章节是否违反世界观规则、地点描述不一致、时代背景不符或社会制度被违反时使用
 ---
 
 # 世界观设定检查Skill

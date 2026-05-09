@@ -1,6 +1,6 @@
 ---
 name: polish-style
-description: 润色小说文本，优化句式和统一风格
+description: 当章节审阅完成后需要润色文本、优化句式、统一风格或调整节奏时使用
 ---
 
 # 文本润色Skill

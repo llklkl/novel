@@ -1,6 +1,6 @@
 ---
 name: world-building
-description: 构建小说世界观，包括角色设定、世界观规则和背景设定
+description: 当创意构思完成后需要构建小说世界观、时代背景、地点设定和世界观规则时使用
 ---
 
 # 世界观构建Skill

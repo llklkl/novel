@@ -1,6 +1,6 @@
 ---
 name: chapter-cycle
-description: 编排单章节的完整生命周期：撰写、审核、提交
+description: 当完成大纲设计后需要逐章撰写、审核并提交到VCS时使用
 ---
 
 # 章节生命周期编排Skill

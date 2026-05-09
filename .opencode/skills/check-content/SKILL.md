@@ -1,6 +1,6 @@
 ---
 name: check-content
-description: 检查小说章节内容是否合规
+description: 当需要检查章节是否包含违禁词、敏感内容或不符合平台规范的内容时使用
 ---
 
 # 违禁词合规检查Skill

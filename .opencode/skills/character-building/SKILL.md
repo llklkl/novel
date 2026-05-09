@@ -1,6 +1,6 @@
 ---
 name: character-building
-description: 构建小说角色体系，包括角色档案、关系网络、角色弧线和对话风格
+description: 当世界观构建完成后需要深度开发角色档案、关系网络、角色弧线和对话风格时使用
 ---
 
 # 角色构建Skill

@@ -1,6 +1,6 @@
 ---
 name: chapter-writing
-description: 执行小说章节内容创作，生成初稿
+description: 当大纲设计完成后需要撰写具体章节内容、生成初稿时使用
 ---
 
 # 章节撰写Skill

@@ -1,6 +1,6 @@
 ---
 name: check-plot
-description: 检查小说章节中情节逻辑的合理性
+description: 当需要检查章节情节因果关系、情节线完整性、人物动机或情节漏洞时使用
 ---
 
 # 情节逻辑检查Skill
