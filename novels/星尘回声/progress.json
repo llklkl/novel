@@ -9,32 +9,37 @@
     "novel-ideation": {
       "status": "completed",
       "started_at": "2026-05-07T16:08:00",
-      "completed_at": "2026-05-07T16:15:00"
+      "completed_at": "2026-05-08T14:45:00"
     },
     "world-building": {
       "status": "completed",
       "started_at": "2026-05-07T16:15:00",
-      "completed_at": "2026-05-07T16:25:00"
+      "completed_at": "2026-05-08T15:00:00"
     },
     "outline-design": {
       "status": "completed",
       "started_at": "2026-05-07T16:25:00",
-      "completed_at": "2026-05-07T16:35:00"
+      "completed_at": "2026-05-08T15:35:00"
     },
     "chapter-writing": {
       "status": "completed",
       "started_at": "2026-05-07T16:35:00",
-      "completed_at": "2026-05-07T17:30:00"
+      "completed_at": "2026-05-08T17:30:00"
     },
     "review-revision": {
       "status": "completed",
       "started_at": "2026-05-07T17:30:00",
-      "completed_at": "2026-05-07T17:45:00"
+      "completed_at": "2026-05-08T17:50:00"
     },
     "polish-style": {
       "status": "completed",
       "started_at": "2026-05-07T17:45:00",
-      "completed_at": "2026-05-07T18:00:00"
+      "completed_at": "2026-05-08T18:00:00"
+    },
+    "character-building": {
+      "started_at": "2026-05-08T15:00:00",
+      "completed_at": "2026-05-08T15:20:00",
+      "status": "completed"
     }
   }
 }
