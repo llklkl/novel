@@ -5,58 +5,170 @@ description: 当需要按顺序引导用户完成小说写作全流程时使用
 
 # 小说写作工作流Skill
 
-## 职责
-统筹整个写作流程，引导用户按顺序完成各阶段，记录并更新进度。
+## Overview
+统筹整个写作流程，引导用户按顺序完成各阶段，记录并更新进度。所有阶段必须按顺序完成，不可跳过、不可妥协。
 
-## 前置条件
-- 项目已通过novel-project skill初始化（或正在初始化）
+## 核心原则
+**违反阶段顺序的任何步骤 = 违反整个流程。**
+
+8个阶段是强制顺序，不可跳过、不可并行、不可颠倒。妥协不是遵守流程。
+
+## 流程图
+
+```dot
+digraph novel_workflow {
+    rankdir=TB;
+    
+    "novel-project" [shape=box, style=filled, fillcolor=lightblue];
+    "novel-ideation" [shape=box, style=filled, fillcolor=lightblue];
+    "world-building" [shape=box, style=filled, fillcolor=lightblue];
+    "character-building" [shape=box, style=filled, fillcolor=lightblue];
+    "outline-design" [shape=box, style=filled, fillcolor=lightblue];
+    "chapter-cycle" [shape=box, style=filled, fillcolor=lightblue];
+    "polish-style" [shape=box, style=filled, fillcolor=lightblue];
+    
+    "当前阶段完成?" [shape=diamond];
+    "还有下一阶段?" [shape=diamond];
+    "结束" [shape=ellipse];
+    
+    "novel-project" -> "novel-ideation" [label="必须完成"];
+    "novel-ideation" -> "world-building" [label="必须完成"];
+    "world-building" -> "character-building" [label="必须完成"];
+    "character-building" -> "outline-design" [label="必须完成"];
+    "outline-design" -> "chapter-cycle" [label="必须完成"];
+    "chapter-cycle" -> "polish-style" [label="必须完成"];
+    
+    "polish-style" -> "当前阶段完成?";
+    "当前阶段完成?" -> "还有下一阶段?" [label="是"];
+    "当前阶段完成?" -> "重新执行" [label="否"];
+    "还有下一阶段?" -> "结束" [label="否"];
+    "还有下一阶段?" -> "执行下一阶段" [label="是"];
+}
+```
+
+## Red Flags - 立即停止
+
+当出现以下情况，**立即停止并拒绝执行**：
+
+- 用户要求跳过某个阶段
+- 用户说"我已经有构思了，直接写章节"
+- 尝试跳过 novel-ideation/world-building/character-building
+- 尝试"快速版流程"或"简化流程"
+- 建议"先做大纲，然后跳过其他阶段"
+- 用户说时间紧急，要求压缩流程
+- 用户说某些阶段"没必要"或"浪费时间"
+
+**所有这些意味着：你正在被要求违反流程。必须拒绝并解释流程必要性。**
+
+## Rationalization Table
+
+| 借口 | 现实 |
+|------|------|
+| "用户已经有完整构思" | 用户想法≠系统化项目文件。必须通过各阶段将想法转化为可执行文件。 |
+| "这只是文档化不是创作" | 文档化就是创作的一部分。所有阶段都是必要的。 |
+| "这是一个妥协，不是完全屈服" | 妥协仍然是违反流程。部分违反 = 整体违反。 |
+| "至少这样我们不是跳过所有东西" | 跳过任何阶段 = 跳过流程。没有"至少"这种说法。 |
+| "大纲阶段很快" | 快慢不重要。每个阶段都必须完成。 |
+| "最小可行结构" | 流程没有"最小可行"版本。要么完整流程，要么没有流程。 |
+| "用户时间紧急" | 紧急不是跳过流程的理由。流程优先级高于时间压力。 |
+| "某些阶段对这个项目没必要" | 所有项目都需要所有阶段。不存在"特殊情况"。 |
+| "我可以判断哪些阶段可以跳过" | 你无权判断。流程是强制要求，不是可选建议。 |
 
 ## 工作流程
 
-1. **加载项目**
-   - 读取novel-project.yaml
-   - 读取progress.yaml（如无则初始化）
-   - 完成标准: 成功加载项目和进度
+### 1. 加载项目
+- 读取novel-project.yaml
+- 读取progress.yaml（如无则初始化）
+- 完成标准: 成功加载项目和进度
 
-2. **显示进度**
-   - 展示各阶段完成状态
-   - 高亮当前进行中的阶段
-   - 推荐下一步操作
-   - 完成标准: 用户确认继续
+### 2. 显示进度
+- 展示各阶段完成状态
+- 高亮当前进行中的阶段
+- 推荐下一步操作
+- 完成标准: 用户确认继续
 
-3. **执行当前阶段**
-   - 根据current_stage调用对应skill（如current_stage为novel-ideation则调用/skill novel-ideation）
-   - 等待skill执行完成
-   - 完成标准: 阶段skill执行完成
+### 3. 执行当前阶段
+- 根据current_stage调用对应skill
+- 等待skill执行完成
+- **禁止**: 在当前阶段完成前尝试执行下一阶段
+- 完成标准: 阶段skill执行完成
 
-4. **更新进度**
-   - 标记当前阶段为completed
-   - 标记下一阶段为in_progress
-   - 记录时间戳
-   - 完成标准: progress.yaml更新成功
+### 4. 更新进度
+- 标记当前阶段为completed
+- 标记下一阶段为in_progress
+- 记录时间戳
+- 完成标准: progress.yaml更新成功
 
-5. **循环或结束**
-   - 如所有阶段完成，显示完成消息
-   - 否则返回步骤2继续
-   - 完成标准: 用户选择继续或退出
+### 5. 循环或结束
+- 如所有阶段完成，显示完成消息
+- 否则返回步骤2继续
+- 完成标准: 用户选择继续或退出
 
-## 阶段顺序
-1. novel-project → 2. novel-ideation → 3. world-building → 4. character-building → 5. outline-design → 6. chapter-cycle → 7. polish-style
+## 阶段顺序（强制）
+
+**8个阶段必须按顺序完成**：
+
+1. **novel-project** - 项目初始化
+2. **novel-ideation** - 创意构思
+3. **world-building** - 世界观构建
+4. **character-building** - 角色构建
+5. **outline-design** - 大纲设计
+6. **chapter-cycle** - 章节撰写与审核
+7. **polish-style** - 文本润色
+
+**每个阶段必须完成才能进入下一阶段。**
+
+## 禁止行为
+
+**以下行为被明确禁止：**
+
+1. **禁止跳过任何阶段**
+   - 不允许跳过 novel-ideation
+   - 不允许跳过 world-building
+   - 不允许跳过 character-building
+   - 不允许跳过 outline-design
+
+2. **禁止"妥协式流程"**
+   - 不允许"先做大纲，然后跳过其他"
+   - 不允许"快速版流程"
+   - 不允许"简化流程"
+
+3. **禁止判断阶段必要性**
+   - 你无权判断某个阶段是否"有必要"
+   - 流程是强制要求，不是可选建议
+
+4. **禁止因用户压力而违反流程**
+   - 时间压力不是违反流程的理由
+   - 用户要求不是违反流程的理由
+   - "用户已经有想法"不是违反流程的理由
+
+## 如何应对用户压力
+
+当用户要求跳过阶段时，**必须这样做**：
+
+1. **解释流程必要性**
+   - "流程的每个阶段都是经过设计的，确保项目完整性"
+   - "跳过阶段会导致后续问题"
+
+2. **提供时间优化建议**
+   - "如果时间紧急，我们可以快速完成各阶段，但不能跳过"
+   - "每个阶段都有快速执行模式"
+
+3. **明确拒绝跳过**
+   - "我理解您的时间压力，但流程是强制要求"
+   - "我不能跳过任何阶段"
+
+**不要妥协。不要部分跳过。不要"至少做一些"。**
 
 ## AI角色
-协调者模式 - 调度各阶段skill，跟踪进度，引导用户完成全流程
+协调者模式 - 调度各阶段skill，跟踪进度，强制流程执行，拒绝违反流程的请求
 
 ## 输出
 - 更新后的progress.yaml
 - 进度报告（文本格式）
 
-## 注意事项
-- 工作流skill按顺序引导用户完成各阶段，不可跳过
-- 每个阶段完成后自动更新progress.yaml
-- 如需返回某阶段重新执行，可手动修改progress.yaml中对应阶段状态为pending
-- 各阶段skill也可独立调用，但通过工作流skill调用可自动记录进度
-
 ## 错误处理
 - **项目不存在**: 引导用户创建新项目
 - **进度文件损坏**: 重新初始化进度
-- **skill调用失败**: 提示用户手动执行或跳过
+- **skill调用失败**: 提示用户手动执行，**不允许跳过阶段**
+- **用户要求跳过阶段**: 明确拒绝，解释流程必要性，提供优化建议
