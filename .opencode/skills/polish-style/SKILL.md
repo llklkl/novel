@@ -51,22 +51,22 @@ digraph polish_style {
 - 列出所有reviewed状态的章节，用户选择
 
 ### 3. 读取/创建风格指南（必须）
-详见 reference.md（风格指南内容详细定义）
+详见 reference/style-guide.md
 
 **禁止**: 在没有风格指南的情况下直接润色
 
 ### 4. 执行系统化润色（4个类别）
-详见 reference.md（4个润色类别详细定义）
+详见 reference/polish-categories.md
 
 **禁止**: 只做部分润色（必须执行4个类别）
 
 ### 5. 生成对比报告（必须）
-详见 reference.md（对比报告格式详细定义）
+详见 reference/report-format.md
 
 **禁止**: 不生成对比报告、不说明修改理由（Rationale）
 
 ### 6. 用户确认（必须等待）
-详见 reference.md（question工具格式）
+详见 reference/report-format.md（用户确认部分）
 
 **禁止**: 不调用question工具、使用markdown checkbox代替question工具
 

@@ -87,7 +87,7 @@ digraph world_building {
 - 关联性检查
 
 ### 3. 构建角色档案
-详见 reference.md 第1节
+详见 reference/character-template.md
 
 **禁止非标准化角色档案！必须使用标准化模板。**
 
@@ -97,10 +97,10 @@ digraph world_building {
 **如果有遗漏**: 补充构建该要素
 
 ### 5. 关联性检查
-详见 reference.md 第3节
+详见 reference/consistency-checks.md
 
 ### 6. 标准化输出
-详见 reference.md 第2节
+详见 reference/output-format.md
 
 ## 禁止行为
 

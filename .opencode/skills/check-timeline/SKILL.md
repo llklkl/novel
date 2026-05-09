@@ -68,24 +68,24 @@ digraph check_timeline {
 - 标记每个时间标记（日期、时间跨度、事件顺序）
 
 ### 3. 初始化检查清单
-详见 reference.md 第1节
+详见 reference/check-dimensions.md
 
 **禁止手工检查！必须使用标准化检查清单（5个维度）。**
 
 ### 4. 逐维度执行检查
-详见 reference.md 第3节
+详见 reference/check-methods.md
 
 **禁止依赖经验判断！必须使用系统化检查方法。**
 
 ### 5. 量化连贯程度
-详见 reference.md 第2节
+详见 reference/scoring-criteria.md
 
 **禁止无法量化！必须使用评分标准（1-5分）量化。**
 
 **权重分配**：详见 Quick Reference 表格
 
 ### 6. 生成标准化报告
-详见 reference.md 第4节
+详见 reference/report-template.md
 
 **禁止没有标准化报告格式！必须使用标准化报告格式。**
 

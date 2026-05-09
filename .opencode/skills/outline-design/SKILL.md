@@ -69,41 +69,41 @@ digraph outline_design {
 - 读取 novel-project.yaml，确认角色构建已完成
 
 ### 2. 选择结构类型
-详见 reference.md 第1节
+详见 reference/structure-guidance.md
 
 **禁止模板套用！必须根据故事特性选择合适结构。**
 
 ### 3. 规划整体情节曲线
-详见 reference.md 第2节
+详见 reference/plot-design.md（情节曲线核心节点）
 
 **禁止依赖灵感！必须使用系统性情节节点设计。**
 
 ### 4. 拆分为章节
-详见 reference.md 第3节
+详见 reference/chapter-template.md
 
 **禁止非标准化章节定义！必须使用标准化模板。**
 
 ### 5. 设计情节点
-详见 reference.md 第4节
+详见 reference/plot-design.md（情节点设计维度）
 
 ### 6. 设计冲突升级
-详见 reference.md 第5节
+详见 reference/plot-design.md（冲突升级设计）
 
 ### 7. 设计节奏控制
-详见 reference.md 第6节
+详见 reference/plot-design.md（张力曲线设计）
 
 **禁止遗漏节奏控制！必须设计张力曲线。**
 
 ### 8. 设计伏笔
-详见 reference.md 第7节
+详见 reference/plot-design.md（伏笔设计）
 
 **禁止遗漏伏笔设计！必须使用伏笔设计方法。**
 
 ### 9. 一致性检查
-详见 reference.md（一致性检查维度）
+详见 Quick Reference（一致性检查维度）
 
 ### 10. 标准化输出
-详见 reference.md 第8节
+详见 reference/output-format.md
 
 ## 禁止行为
 

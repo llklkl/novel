@@ -81,7 +81,7 @@ digraph novel_project {
 
 ### 1. 创建新项目
 
-详见 reference.md（标准目录结构、配置文件模板、进度文件模板）
+详见 reference/directory-structure.md 和 reference/config-templates.md
 
 **禁止**: 使用 ad-hoc 结构、手动创建配置、在 novels/ 之外创建项目
 

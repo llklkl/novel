@@ -67,7 +67,7 @@ digraph novel_ideation {
 - 读取 novel-project.yaml，检查 ideation 状态
 
 ### 2. 系统化探索（7个维度）
-详见 reference.md 第1节
+详见 reference/exploration-dimensions.md
 
 **禁止 ad-hoc 提问！必须按顺序探索7个维度。**
 
@@ -88,12 +88,12 @@ digraph novel_ideation {
 **禁止电梯演讲超过100字！**
 
 ### 7. 检查遗漏维度
-详见 reference.md 第3节
+详见 reference/checklist.md
 
 **如果有遗漏**: 补充探索该维度
 
 ### 8. 标准化输出
-详见 reference.md 第2节
+详见 reference/output-format.md
 
 ## 禁止行为
 

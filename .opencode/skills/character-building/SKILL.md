@@ -67,37 +67,37 @@ digraph character_building {
 - 读取 novel-project.yaml，确认 world-building 已完成
 
 ### 2. 构建角色档案
-详见 reference.md 第1节
+详见 reference/character-templates.md
 
 **禁止非标准化角色档案！必须使用标准化模板（15个字段）。**
 
 **构建顺序**：主角 → 反派 → 主要配角（2-3个）
 
 ### 3. 构建角色弧线
-详见 reference.md 第2节
+详见 reference/character-templates.md（角色弧线模板详细定义）
 
 **禁止粗糙弧线定义！必须明确4个阶段：starting_point, challenges, turning_point, ending_point。**
 
 ### 4. 构建对话风格
-详见 reference.md 第3节
+详见 reference/character-templates.md（对话风格模板详细定义）
 
 **禁止抽象对话风格！必须包含具体示例（至少4个场景）。**
 
 ### 5. 构建关系网络
-详见 reference.md 第4节
+详见 reference/relationships.md
 
 ### 6. 构建互动模式
-详见 reference.md 第5节
+详见 reference/relationships.md（互动模式模板）
 
 **禁止遗漏互动模式！必须定义主要角色之间的互动模式。**
 
 ### 7. 一致性检查
-详见 reference.md 第6节
+详见 reference/consistency-checks.md
 
 **禁止没有验证机制！必须检查一致性。**
 
 ### 8. 标准化输出
-详见 reference.md 第7节
+详见 reference/output-format.md
 
 ## 禁止行为
 
