@@ -1,0 +1,12 @@
+# Python virtual environment
+.venv/
+
+# Git worktrees (project-local)
+.worktrees/
+
+# Temporary conversion script
+scripts/yaml_to_json.py
+
+# Python bytecode
+*.pyc
+__pycache__/
