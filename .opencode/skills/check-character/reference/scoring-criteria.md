@@ -2,27 +2,36 @@
 
 ## 评分标准详细定义
 
-```yaml
-consistency_score:
-  - level: 5
-    label: "完全一致"
-    criteria: "所有表现与角色档案完全匹配"
-  
-  - level: 4
-    label: "基本一致"
-    criteria: "个别细微偏差，不影响整体一致性"
-  
-  - level: 3
-    label: "部分一致"
-    criteria: "有明显偏差，但核心特征保持"
-  
-  - level: 2
-    label: "明显不一致"
-    criteria: "多项偏差，角色表现偏离设定"
-  
-  - level: 1
-    label: "严重不一致"
-    criteria: "角色表现与档案矛盾，需重写"
+```json
+{
+  "consistency_score": [
+    {
+      "level": 5,
+      "label": "完全一致",
+      "criteria": "所有表现与角色档案完全匹配"
+    },
+    {
+      "level": 4,
+      "label": "基本一致",
+      "criteria": "个别细微偏差，不影响整体一致性"
+    },
+    {
+      "level": 3,
+      "label": "部分一致",
+      "criteria": "有明显偏差，但核心特征保持"
+    },
+    {
+      "level": 2,
+      "label": "明显不一致",
+      "criteria": "多项偏差，角色表现偏离设定"
+    },
+    {
+      "level": 1,
+      "label": "严重不一致",
+      "criteria": "角色表现与档案矛盾，需重写"
+    }
+  ]
+}
 ```
 
 **权重分配：**

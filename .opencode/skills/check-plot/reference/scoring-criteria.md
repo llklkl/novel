@@ -2,27 +2,36 @@
 
 ## 评分标准详细定义
 
-```yaml
-logic_score:
-  - level: 5
-    label: "完全合理"
-    criteria: "所有情节逻辑完全合理，无矛盾"
-
-  - level: 4
-    label: "基本合理"
-    criteria: "个别因果关系弱，不影响整体"
-
-  - level: 3
-    label: "部分合理"
-    criteria: "有逻辑问题，但核心情节保持"
-
-  - level: 2
-    label: "明显不合理"
-    criteria: "多项逻辑问题"
-
-  - level: 1
-    label: "严重不合理"
-    criteria: "情节逻辑矛盾，需重写"
+```json
+{
+  "logic_score": [
+    {
+      "level": 5,
+      "label": "完全合理",
+      "criteria": "所有情节逻辑完全合理，无矛盾"
+    },
+    {
+      "level": 4,
+      "label": "基本合理",
+      "criteria": "个别因果关系弱，不影响整体"
+    },
+    {
+      "level": 3,
+      "label": "部分合理",
+      "criteria": "有逻辑问题，但核心情节保持"
+    },
+    {
+      "level": 2,
+      "label": "明显不合理",
+      "criteria": "多项逻辑问题"
+    },
+    {
+      "level": 1,
+      "label": "严重不合理",
+      "criteria": "情节逻辑矛盾，需重写"
+    }
+  ]
+}
 ```
 
 **权重分配：**
