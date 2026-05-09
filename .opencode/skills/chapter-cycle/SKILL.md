@@ -1,6 +1,6 @@
 ---
 name: chapter-cycle
-description: 当完成大纲设计后需要按流程处理章节时使用
+description: Use when 完成大纲设计后需要处理章节
 ---
 
 # 章节生命周期编排Skill

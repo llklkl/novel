@@ -1,6 +1,6 @@
 ---
 name: chapter-writing
-description: 当大纲设计完成后需要撰写具体章节内容、生成初稿时使用
+description: Use when 大纲设计完成后需要撰写章节
 ---
 
 # 章节撰写Skill

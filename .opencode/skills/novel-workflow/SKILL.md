@@ -1,6 +1,6 @@
 ---
 name: novel-workflow
-description: 当需要按顺序引导用户完成小说写作全流程时使用
+description: Use when 用户想要开始小说写作流程
 ---
 
 # 小说写作工作流Skill

@@ -1,6 +1,6 @@
 ---
 name: review-revision
-description: 当章节草稿完成后需要调度各检查skill进行审阅并汇总生成统一报告时使用
+description: Use when 章节草稿完成后需要审阅和汇总报告
 ---
 
 # 审阅修订Skill

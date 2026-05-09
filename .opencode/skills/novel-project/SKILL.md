@@ -1,6 +1,6 @@
 ---
 name: novel-project
-description: 当需要创建、切换、加载小说项目或查看项目状态时使用
+description: Use when 用户想要创建、切换或查看小说项目
 ---
 
 # 项目管理Skill

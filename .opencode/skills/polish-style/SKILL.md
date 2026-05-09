@@ -1,6 +1,6 @@
 ---
 name: polish-style
-description: 当章节审阅完成后需要润色文本、优化句式、统一风格或调整节奏时使用
+description: Use when 章节审阅完成后需要润色文本
 ---
 
 # 文本润色Skill
