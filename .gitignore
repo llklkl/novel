@@ -10,3 +10,7 @@ scripts/yaml_to_json.py
 # Python bytecode
 *.pyc
 __pycache__/
+
+# Novel reader
+server/node_modules/
+server/public/
